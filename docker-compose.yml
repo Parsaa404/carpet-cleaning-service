@@ -1,0 +1,44 @@
+services:
+  # PostgreSQL Database
+  db:
+    image: postgres:16-alpine
+    container_name: cleanpro-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${DB_USER:-cleanpro}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-cleanpro_secret}
+      POSTGRES_DB: ${DB_NAME:-cleaningservice}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-cleanpro} -d ${DB_NAME:-cleaningservice}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Next.js Application
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: cleanpro-app
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgresql://${DB_USER:-cleanpro}:${DB_PASSWORD:-cleanpro_secret}@db:5432/${DB_NAME:-cleaningservice}?schema=public
+      AUTH_SECRET: ${AUTH_SECRET}
+      NEXTAUTH_URL: ${NEXTAUTH_URL:-http://localhost:3000}
+      NEXT_PUBLIC_SITE_URL: ${NEXT_PUBLIC_SITE_URL:-http://localhost:3000}
+      NEXT_PUBLIC_BUSINESS_NAME: ${NEXT_PUBLIC_BUSINESS_NAME:-CleanPro Services}
+      NEXT_PUBLIC_BUSINESS_PHONE: ${NEXT_PUBLIC_BUSINESS_PHONE:-+1-555-123-4567}
+      NEXT_PUBLIC_BUSINESS_EMAIL: ${NEXT_PUBLIC_BUSINESS_EMAIL:-contact@cleanpro.com}
+      NEXT_PUBLIC_BUSINESS_ADDRESS: ${NEXT_PUBLIC_BUSINESS_ADDRESS:-123 Main Street, City, State 12345}
+    ports:
+      - "3000:3000"
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  postgres_data:
