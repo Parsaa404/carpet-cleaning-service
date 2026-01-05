@@ -4,15 +4,20 @@ export default function Footer() {
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer className="bg-gray-900 text-white">
-            <div className="container py-16">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <footer className="bg-gray-950 text-white relative overflow-hidden">
+            {/* Decorative Background Elements */}
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-blue-600 to-transparent opacity-50"></div>
+            <div className="absolute -top-24 -right-24 w-96 h-96 bg-blue-900/20 rounded-full blur-3xl pointer-events-none"></div>
+            <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-indigo-900/20 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div className="container relative z-10 py-16 lg:py-24 border-t border-gray-800">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8">
                     {/* Brand Column */}
-                    <div>
-                        <Link href="/" className="flex items-center gap-2 mb-4">
-                            <div className="w-10 h-10 bg-gradient-to-r from-primary-500 to-primary-600 rounded-lg flex items-center justify-center">
+                    <div className="lg:col-span-4">
+                        <Link href="/" className="flex items-center gap-3 mb-6 group">
+                            <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center shadow-lg shadow-blue-900/20 group-hover:scale-105 transition-transform duration-300">
                                 <svg
-                                    className="w-6 h-6 text-white"
+                                    className="w-7 h-7 text-white"
                                     fill="none"
                                     viewBox="0 0 24 24"
                                     stroke="currentColor"
@@ -25,156 +30,104 @@ export default function Footer() {
                                     />
                                 </svg>
                             </div>
-                            <span className="text-xl font-bold">CleanPro</span>
+                            <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">CleanPro</span>
                         </Link>
-                        <p className="text-gray-400 text-sm mb-4">
-                            Professional cleaning services for your home. We make your spaces
-                            sparkle with our expert carpet, sofa, and upholstery cleaning.
+                        <p className="text-gray-400 text-base leading-relaxed mb-8 max-w-sm">
+                            Professional cleaning services that transform your home.
+                            We combine eco-friendly products with expert care to deliver
+                            outstanding results every time.
                         </p>
                         <div className="flex gap-4">
-                            {/* Social Icons */}
-                            <a
-                                href="#"
-                                className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-colors"
-                                aria-label="Facebook"
-                            >
-                                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M18.77,7.46H14.5v-1.9c0-.9.6-1.1,1-1.1h3V.5l-4.24-.06C10.81.38,9.89,3.12,9.89,5.62V7.46H7.23v4h2.66V22h4.61V11.42h3.12Z" />
-                                </svg>
-                            </a>
-                            <a
-                                href="#"
-                                className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-colors"
-                                aria-label="Instagram"
-                            >
-                                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M12,2.16c3.2,0,3.58.01,4.85.07,1.17.05,1.8.25,2.23.41.56.22.96.48,1.38.9s.68.82.9,1.38c.16.42.36,1.06.41,2.23.06,1.27.07,1.65.07,4.85s-.01,3.58-.07,4.85c-.05,1.17-.25,1.8-.41,2.23-.22.56-.48.96-.9,1.38s-.82.68-1.38.9c-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9s-.68-.82-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38s.82-.68,1.38-.9c.42-.16,1.06-.36,2.23-.41,1.27-.06,1.65-.07,4.85-.07M12,0C8.74,0,8.33.01,7.05.07,5.78.13,4.91.33,4.15.63c-.79.31-1.46.72-2.13,1.38S.94,3.36.63,4.15c-.3.76-.5,1.63-.56,2.9C.01,8.33,0,8.74,0,12s.01,3.67.07,4.95c.06,1.27.26,2.14.56,2.9.31.79.72,1.46,1.38,2.13s1.34,1.07,2.13,1.38c.76.3,1.63.5,2.9.56,1.28.06,1.69.07,4.95.07s3.67-.01,4.95-.07c1.27-.06,2.14-.26,2.9-.56.79-.31,1.46-.72,2.13-1.38s1.07-1.34,1.38-2.13c.3-.76.5-1.63.56-2.9.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.14-.56-2.9-.31-.79-.72-1.46-1.38-2.13s-1.34-1.07-2.13-1.38c-.76-.3-1.63-.5-2.9-.56C15.67.01,15.26,0,12,0Z" />
-                                    <path d="M12,5.84A6.16,6.16,0,1,0,18.16,12,6.16,6.16,0,0,0,12,5.84ZM12,16a4,4,0,1,1,4-4A4,4,0,0,1,12,16Z" />
-                                    <circle cx="18.41" cy="5.59" r="1.44" />
-                                </svg>
-                            </a>
+                            {['facebook', 'twitter', 'instagram', 'linkedin'].map((social) => (
+                                <a
+                                    key={social}
+                                    href={`#${social}`}
+                                    className="w-10 h-10 bg-gray-900 rounded-lg flex items-center justify-center text-gray-400 hover:bg-blue-600 hover:text-white transition-all duration-300 hover:-translate-y-1 shadow-md hover:shadow-blue-900/30 border border-gray-800 hover:border-blue-500"
+                                    aria-label={`Follow us on ${social}`}
+                                >
+                                    <span className="capitalize sr-only">{social}</span>
+                                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 2C6.477 2 2 6.477 2 12c0 5.523 4.477 10 10 10s10-4.477 10-10c0-5.523-4.477-10-10-10z" className="opacity-0" />
+                                        <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" />
+                                    </svg>
+                                </a>
+                            ))}
                         </div>
                     </div>
 
                     {/* Services Column */}
-                    <div>
-                        <h3 className="text-lg font-semibold mb-4">Our Services</h3>
-                        <ul className="space-y-3">
-                            <li>
-                                <Link
-                                    href="/carpet-cleaning"
-                                    className="text-gray-400 hover:text-white transition-colors"
-                                >
-                                    Carpet Cleaning
-                                </Link>
-                            </li>
-                            <li>
-                                <Link
-                                    href="/sofa-cleaning"
-                                    className="text-gray-400 hover:text-white transition-colors"
-                                >
-                                    Sofa Cleaning
-                                </Link>
-                            </li>
-                            <li>
-                                <Link
-                                    href="/upholstery-cleaning"
-                                    className="text-gray-400 hover:text-white transition-colors"
-                                >
-                                    Upholstery Cleaning
-                                </Link>
-                            </li>
+                    <div className="lg:col-span-3">
+                        <h3 className="text-lg font-bold text-white mb-6">Our Services</h3>
+                        <ul className="space-y-4">
+                            {[
+                                { name: 'Carpet Cleaning', href: '/carpet-cleaning' },
+                                { name: 'Sofa Cleaning', href: '/sofa-cleaning' },
+                                { name: 'Upholstery Care', href: '/upholstery-cleaning' },
+                                { name: 'Stain Removal', href: '/services/stain-removal' },
+                                { name: 'Commercial Cleaning', href: '/services/commercial' },
+                            ].map((link) => (
+                                <li key={link.name}>
+                                    <Link
+                                        href={link.href}
+                                        className="text-gray-400 hover:text-blue-400 transition-colors flex items-center gap-2 group"
+                                    >
+                                        <span className="w-1.5 h-1.5 rounded-full bg-blue-600 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                                        {link.name}
+                                    </Link>
+                                </li>
+                            ))}
                         </ul>
                     </div>
 
-                    {/* Quick Links Column */}
-                    <div>
-                        <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-                        <ul className="space-y-3">
-                            <li>
-                                <Link
-                                    href="/about"
-                                    className="text-gray-400 hover:text-white transition-colors"
-                                >
-                                    About Us
-                                </Link>
-                            </li>
-                            <li>
-                                <Link
-                                    href="/contact"
-                                    className="text-gray-400 hover:text-white transition-colors"
-                                >
-                                    Contact Us
-                                </Link>
-                            </li>
-                            <li>
-                                <Link
-                                    href="/login"
-                                    className="text-gray-400 hover:text-white transition-colors"
-                                >
-                                    My Account
-                                </Link>
-                            </li>
+                    {/* Company Column */}
+                    <div className="lg:col-span-2">
+                        <h3 className="text-lg font-bold text-white mb-6">Company</h3>
+                        <ul className="space-y-4">
+                            {[
+                                { name: 'About Us', href: '/about' },
+                                { name: 'Contact', href: '/contact' },
+                                { name: 'Careers', href: '/careers' },
+                                { name: 'Blog', href: '/blog' },
+                                { name: 'Privacy Policy', href: '/privacy' },
+                            ].map((link) => (
+                                <li key={link.name}>
+                                    <Link
+                                        href={link.href}
+                                        className="text-gray-400 hover:text-blue-400 transition-colors"
+                                    >
+                                        {link.name}
+                                    </Link>
+                                </li>
+                            ))}
                         </ul>
                     </div>
 
-                    {/* Contact Column */}
-                    <div>
-                        <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
-                        <ul className="space-y-3 text-gray-400">
-                            <li className="flex items-start gap-3">
-                                <svg
-                                    className="w-5 h-5 mt-0.5 text-primary-500"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth={2}
-                                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                                    />
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth={2}
-                                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                                    />
-                                </svg>
-                                <span>123 Main Street, City, State 12345</span>
+                    {/* Contact Info Column */}
+                    <div className="lg:col-span-3">
+                        <h3 className="text-lg font-bold text-white mb-6">Contact Us</h3>
+                        <ul className="space-y-6">
+                            <li className="flex items-start gap-4 group">
+                                <div className="w-10 h-10 rounded-lg bg-gray-900 border border-gray-800 flex items-center justify-center flex-shrink-0 group-hover:border-blue-500/50 transition-colors">
+                                    <svg className="w-5 h-5 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p className="text-gray-400 text-sm">Visit us at:</p>
+                                    <p className="text-white font-medium mt-1">123 Cleaning Blvd, Suite 100<br />New York, NY 10001</p>
+                                </div>
                             </li>
-                            <li className="flex items-center gap-3">
-                                <svg
-                                    className="w-5 h-5 text-primary-500"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth={2}
-                                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                                    />
-                                </svg>
-                                <span>+1-555-123-4567</span>
-                            </li>
-                            <li className="flex items-center gap-3">
-                                <svg
-                                    className="w-5 h-5 text-primary-500"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth={2}
-                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                                    />
-                                </svg>
-                                <span>contact@cleanpro.com</span>
+                            <li className="flex items-start gap-4 group">
+                                <div className="w-10 h-10 rounded-lg bg-gray-900 border border-gray-800 flex items-center justify-center flex-shrink-0 group-hover:border-blue-500/50 transition-colors">
+                                    <svg className="w-5 h-5 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p className="text-gray-400 text-sm">Call us today:</p>
+                                    <p className="text-white font-medium mt-1 hover:text-blue-400 transition-colors cursor-pointer">+1 (555) 123-4567</p>
+                                </div>
                             </li>
                         </ul>
                     </div>
@@ -182,18 +135,15 @@ export default function Footer() {
             </div>
 
             {/* Bottom Bar */}
-            <div className="border-t border-gray-800">
-                <div className="container py-6 flex flex-col md:flex-row items-center justify-between gap-4">
-                    <p className="text-gray-400 text-sm">
+            <div className="border-t border-gray-800 relative z-10">
+                <div className="container py-8 flex flex-col md:flex-row items-center justify-between gap-4">
+                    <p className="text-gray-500 text-sm">
                         © {currentYear} CleanPro Services. All rights reserved.
                     </p>
-                    <div className="flex gap-6 text-sm text-gray-400">
-                        <Link href="#" className="hover:text-white transition-colors">
-                            Privacy Policy
-                        </Link>
-                        <Link href="#" className="hover:text-white transition-colors">
-                            Terms of Service
-                        </Link>
+                    <div className="flex gap-8 text-sm font-medium text-gray-500">
+                        <Link href="/terms" className="hover:text-blue-400 transition-colors">Terms</Link>
+                        <Link href="/privacy" className="hover:text-blue-400 transition-colors">Privacy</Link>
+                        <Link href="/cookies" className="hover:text-blue-400 transition-colors">Cookies</Link>
                     </div>
                 </div>
             </div>

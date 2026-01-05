@@ -141,26 +141,52 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="lg:w-1/2 relative mt-12 lg:mt-0 animate-float">
+            <div className="lg:w-1/2 relative mt-12 lg:mt-0 animate-float hidden md:block">
               <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
               <div className="absolute top-0 -left-4 w-72 h-72 bg-purple-100 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
-              <div className="relative glass-panel p-8 rounded-3xl border border-white/50 shadow-2xl">
+
+              <div className="relative glass-panel p-8 rounded-3xl border border-white/50 shadow-2xl backdrop-blur-xl">
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-4">
-                    <div className="h-40 rounded-2xl bg-gray-200 overflow-hidden shadow-lg transform transition hover:scale-105">
-                      {/* Placeholder for Image */}
-                      <div className="w-full h-full bg-gradient-to-br from-blue-400 to-blue-600 opacity-90"></div>
+                    {/* Floating Card 1: Carpet */}
+                    <div className="rounded-2xl bg-white p-4 shadow-lg transform transition hover:scale-105 border border-gray-50 flex flex-col items-center text-center">
+                      <div className="w-12 h-12 mb-3 bg-blue-100 rounded-full flex items-center justify-center text-blue-600">
+                        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" /></svg>
+                      </div>
+                      <div className="h-2 w-20 bg-gray-200 rounded-full mb-2"></div>
+                      <div className="h-2 w-12 bg-gray-100 rounded-full"></div>
                     </div>
-                    <div className="h-32 rounded-2xl bg-gray-200 overflow-hidden shadow-lg transform transition hover:scale-105">
-                      <div className="w-full h-full bg-gradient-to-br from-indigo-400 to-purple-600 opacity-90"></div>
+                    {/* Floating Card 2: Sofa - Larger */}
+                    <div className="rounded-2xl bg-blue-600 p-5 shadow-xl transform transition hover:scale-105 border border-blue-500 text-white flex flex-col items-center text-center h-48 justify-center">
+                      <div className="w-16 h-16 mb-4 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                        <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" /></svg>
+                      </div>
+                      <p className="font-bold text-lg mb-1">Premium</p>
+                      <p className="text-blue-100 text-sm">Sofa Cleaning</p>
                     </div>
                   </div>
+
                   <div className="space-y-4 pt-8">
-                    <div className="h-32 rounded-2xl bg-gray-200 overflow-hidden shadow-lg transform transition hover:scale-105">
-                      <div className="w-full h-full bg-gradient-to-br from-teal-400 to-green-500 opacity-90"></div>
+                    {/* Floating Card 3: Satisfaction */}
+                    <div className="rounded-2xl bg-white p-4 shadow-lg transform transition hover:scale-105 border border-gray-50 flex items-center gap-3">
+                      <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center text-green-600 shrink-0">
+                        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                      </div>
+                      <div>
+                        <p className="text-xs text-gray-400 uppercase tracking-wider font-bold">Rating</p>
+                        <p className="text-gray-900 font-bold">4.9/5.0</p>
+                      </div>
                     </div>
-                    <div className="h-40 rounded-2xl bg-gray-200 overflow-hidden shadow-lg transform transition hover:scale-105">
-                      <div className="w-full h-full bg-gradient-to-br from-orange-400 to-pink-500 opacity-90"></div>
+                    {/* Floating Card 4: Upholstery */}
+                    <div className="rounded-2xl bg-gray-50 p-4 shadow-lg transform transition hover:scale-105 border border-gray-100 h-40 flex flex-col justify-end relative overflow-hidden">
+                      <div className="absolute top-0 right-0 w-24 h-24 bg-purple-100 rounded-full -mr-12 -mt-12 opacity-50"></div>
+                      <div className="relative z-10">
+                        <div className="w-10 h-10 mb-3 bg-white rounded-lg shadow-sm flex items-center justify-center text-purple-600">
+                          <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
+                        </div>
+                        <p className="font-bold text-gray-900">Upholstery</p>
+                        <p className="text-xs text-gray-500">Expert Care</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -306,6 +332,13 @@ export default function HomePage() {
               Book Now - Get a Quote
             </Link>
           </div>
+        </div>
+
+        {/* Decorative Wave Separator */}
+        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none rotate-180">
+          <svg className="relative block w-[calc(100%+1.3px)] h-[50px]" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" className="fill-gray-950"></path>
+          </svg>
         </div>
       </section>
     </>
